@@ -1,6 +1,12 @@
-# Servicio ReST: Resumen estadístico — Cruz Morada
+# Trabajo ReST V2 — Cruz Morada
 
-Universidad Tecnológica Metropolitana — Computación Paralela y Distribuida.
+**Curso:** Computación Paralela y Distribuida  
+**Institución:** Universidad Tecnológica Metropolitana (UTEM)  
+**Entrega:** 17 de julio de 2026  
+**Integrantes:**
+- [Matias Fernandez  20.969.062-4]
+- [Camilo Moya       21.230.348-8]
+- [Ignacio Ortega    21.481.176-6]
 
 API REST que entrega estadísticas de ventas (suma, conteo, promedio, mínimo,
 máximo, mediana, desviación estándar) para Cruz Morada. Al iniciar, procesa
