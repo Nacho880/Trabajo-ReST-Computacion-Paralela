@@ -1,4 +1,4 @@
-# Trabajo ReST V2 — Cruz Morada
+# Trabajo ReST — Cruz Morada
 
 **Curso:** Computación Paralela y Distribuida  
 **Institución:** Universidad Tecnológica Metropolitana (UTEM)  
@@ -15,6 +15,32 @@ intervención manual y sin cargar el archivo completo en memoria en ningún
 momento — ver "Procesamiento paralelo" más abajo). Los filtros (género,
 edad, canal, producto, cliente, local, rango de fechas) se resuelven con
 SQL parametrizado directamente contra la base de datos.
+
+## Versión 2 — Memoria / Streaming (Dask)
+
+Tambien se hizo otra alternativa, la cual es una versión basada
+en procesamiento directo del CSV utilizando Dask.
+
+La API carga el CSV y lo procesa en memoria cuando el tamaño del dataset lo
+permite. Si el archivo supera la RAM disponible, utiliza un modo streaming
+(*out-of-core*), donde las estadísticas son calculadas por particiones sin
+materializar el dataset completo.
+
+Esta versión no requiere una base de datos externa: basta con instalar las
+dependencias y ejecutar la API.
+
+Características:
+
+- Procesamiento paralelo mediante Dask.
+- Selección automática entre modo memoria y modo streaming según los recursos
+  disponibles.
+- Bajo consumo de memoria en archivos grandes mediante procesamiento por
+  particiones.
+- En modo streaming las consultas GET/POST presentan una mayor latencia debido
+  a que deben recorrer las particiones del archivo para calcular los resultados.
+
+Repositorio:
+https://github.com/Nacho880/Trabajo-ReST-Computacion-Paralela-V2
 
 ## Requisitos
 
