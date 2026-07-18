@@ -1,0 +1,33 @@
+# =============================================================================
+# .gitignore — Servicio ReST: Resumen estadístico (Cruz Morada)
+# =============================================================================
+
+# Credenciales reales (Postgres/Supabase, URLs de descarga, etc.).
+# NUNCA se sube: solo .env.example (sin valores reales) va al repositorio.
+.env
+
+# Datos de entrada (CSV de ventas, puede pesar hasta ~1.7 TiB según el
+# enunciado): se ignora TODO el contenido de data/, EXCEPTO .gitkeep,
+# para que la carpeta exista y sea visible en el repositorio (git no
+# trackea directorios vacíos por sí solo) sin subir el CSV real.
+data/*
+!data/.gitkeep
+
+# Artefactos generados por la ejecución (logs, reportes JSON de
+# limpieza/estandarización): se regeneran solos al correr la API.
+output/
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+.pytest_cache/
+*.egg-info/
+.venv/
+venv/
+
+# Editores / SO
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db

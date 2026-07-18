@@ -1,0 +1,29 @@
+# =============================================================================
+# requirements.txt — Servicio ReST: Resumen estadístico (Cruz Morada)
+# =============================================================================
+# Instalación: pip install -r requirements.txt
+#
+# Nota sobre versiones: se fijan rangos mínimos compatibles verificados
+# durante el desarrollo, con techo abierto a la siguiente versión mayor para
+# evitar breaking changes no probados. Si su entorno ya tiene versiones más
+# nuevas dentro del rango, no es necesario reinstalar.
+
+# --- Procesamiento de datos y paralelismo ---
+pandas>=2.2,<3.1
+numpy>=1.26,<3.0
+dask[dataframe]>=2024.1.0,<2027.0.0
+scipy>=1.11,<2.0
+
+# --- API REST (servicio ReST: resumen estadístico) ---
+fastapi>=0.111,<1.0
+uvicorn[standard]>=0.29,<1.0
+pydantic>=2.6,<3.0
+requests>=2.31,<3.0
+python-dotenv>=1.0,<2.0
+
+# --- Base de datos (PostgreSQL, arquitectura de dos pasadas) ---
+psycopg2-binary>=2.9,<3.0
+
+# --- Testing ---
+pytest>=7.4,<9.0
+httpx>=0.27,<1.0
