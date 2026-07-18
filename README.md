@@ -16,6 +16,25 @@ momento — ver "Procesamiento paralelo" más abajo). Los filtros (género,
 edad, canal, producto, cliente, local, rango de fechas) se resuelven con
 SQL parametrizado directamente contra la base de datos.
 
+➡️ Repositorio V2 (PostgreSQL):
+https://github.com/Nacho880/Trabajo-ReST-Computacion-Paralela-V2
+
+### Versión PostgreSQL
+La API carga el CSV mediante Dask utilizando procesamiento por bloques
+(chunking) y realiza una ingesta inicial hacia PostgreSQL.
+
+Las consultas GET/POST son resueltas directamente mediante SQL sobre la base
+de datos, aprovechando índices para mejorar el rendimiento.
+
+Requiere:
+- Instancia PostgreSQL activa.
+- Configuración de la cadena de conexión.
+- Ejecución previa de la carga inicial del CSV.
+
+A diferencia de la versión streaming, esta implementación depende de que todos
+los datos del CSV hayan sido almacenados correctamente en PostgreSQL antes de
+atender consultas.
+
 ## Requisitos
 
 - Python 3.12+
